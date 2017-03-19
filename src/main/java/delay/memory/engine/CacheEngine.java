@@ -1,7 +1,6 @@
 package delay.memory.engine;
 
 import java.io.IOException;
-import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.*;
@@ -22,7 +21,7 @@ public class CacheEngine<K, V> implements CachingDelayService<K, V> {
     // Constructor
     public CacheEngine() {
         isRunning = new AtomicBoolean(true);
-        removableData = new LinkedList<>();
+        removableData = new LinkedBlockingQueue<V>();
         delayDataQueue = new DelayQueue<>();
         dataCache = new ConcurrentHashMap<>();
         cleanerTask = Executors.newSingleThreadExecutor();
