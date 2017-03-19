@@ -66,7 +66,7 @@ public class CacheEngine<K, V> implements CachingDelayService<K, V> {
     }
 
     @Override
-    public void put(K key, V data, long timeToLeave,  TimeUnit timeUnit) {
+    public void put(K key, V data, long timeToLeave, TimeUnit timeUnit) {
         put(key, data, timeUnit.toMillis(timeToLeave));
     }
 
@@ -82,7 +82,6 @@ public class CacheEngine<K, V> implements CachingDelayService<K, V> {
     }
 
     private class DelayData<K> implements Delayed {
-
 
         // Fields
         private K key;

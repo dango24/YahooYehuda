@@ -32,7 +32,7 @@ public class CachingDelayTest {
     // Tests
 
     @Test
-    public void testKeyValueDelay() {
+    public void testKeyValueDelay() throws Exception {
         cachingDelayService.put("A", 1, 10_000);
         cachingDelayService.put("B", 2, 10_000);
         cachingDelayService.put("C", 3, 10_000);
@@ -43,7 +43,7 @@ public class CachingDelayTest {
     }
 
     @Test
-    public void testKeyValueDelay1() {
+    public void testKeyValueDelay1() throws Exception {
         cachingDelayService.put("A", 1, 3000);
         cachingDelayService.put("B", 2, 1500);
         cachingDelayService.put("C", 3, 2000);
@@ -53,7 +53,7 @@ public class CachingDelayTest {
     }
 
     @Test
-    public void testKeyValueDelay2() {
+    public void testKeyValueDelay2() throws Exception {
         cachingDelayService.put("A", 1, 10_000);
         cachingDelayService.put("B", 2, 1500);
         cachingDelayService.put("C", 3, 2000);
@@ -63,7 +63,7 @@ public class CachingDelayTest {
     }
 
     @Test
-    public void testKeyValueDelay3() {
+    public void testKeyValueDelay3() throws Exception {
         cachingDelayService.put("A", 1, 10_000);
         cachingDelayService.put("B", 2, 1500);
         cachingDelayService.put("C", 3, 3000);
@@ -74,7 +74,7 @@ public class CachingDelayTest {
     }
 
     @Test
-    public void testKeyValueDelay4() {
+    public void testKeyValueDelay4() throws Exception {
         cachingDelayService.put("B", 2, 1500);
         cachingDelayService.put("C", 3, 3000);
         cachingDelayService.put("A", 3, 7000);
@@ -84,7 +84,7 @@ public class CachingDelayTest {
     }
 
     @Test
-    public void testKeyValueDelay5() {
+    public void testKeyValueDelay5() throws Exception {
         cachingDelayService.put("B", 2, 1, TimeUnit.SECONDS);
         cachingDelayService.put("C", 3, 3, TimeUnit.SECONDS);
         cachingDelayService.put("A", 3, 7 , TimeUnit.SECONDS);
@@ -94,7 +94,7 @@ public class CachingDelayTest {
     }
 
     @Test
-    public void testKeyValueDelay6() {
+    public void testKeyValueDelay6() throws Exception {
         cachingDelayService.put("B", 2, 1, TimeUnit.SECONDS);
         cachingDelayService.put("C", 3, 3, TimeUnit.SECONDS);
         cachingDelayService.put("A", 3, 7 , TimeUnit.SECONDS);
@@ -104,7 +104,7 @@ public class CachingDelayTest {
     }
 
     @Test
-    public void testKeyValueDelay7() {
+    public void testKeyValueDelay7() throws Exception {
         cachingDelayService.put("B", 2, 1, TimeUnit.SECONDS);
         cachingDelayService.put("C", 3, 3, TimeUnit.SECONDS);
         cachingDelayService.put("A", 3, 7 , TimeUnit.SECONDS);
@@ -112,7 +112,6 @@ public class CachingDelayTest {
         assertTrue(2 == cachingDelayService.get("B"));
         assertTrue(3 == cachingDelayService.get("C"));
     }
-
 
     private void sleepingBeauty(int timeToSleep) {
         try {
