@@ -21,7 +21,7 @@ public class CacheEngine<K, V> implements CachingDelayService<K, V> {
     // Constructor
     public CacheEngine() {
         isRunning = new AtomicBoolean(true);
-        removableData = new LinkedBlockingQueue<V>();
+        removableData = new LinkedBlockingQueue<>();
         delayDataQueue = new DelayQueue<>();
         dataCache = new ConcurrentHashMap<>();
         cleanerTask = Executors.newSingleThreadExecutor();
